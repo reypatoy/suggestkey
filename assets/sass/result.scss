@@ -1,0 +1,29 @@
+.quote::before {
+  position: absolute;
+  top: -0.5em;
+  left: -0.7em;
+  font-size: 1.5em;
+}
+
+.quote::after {
+  position: absolute;
+  bottom: -0.5em;
+  right: -0.7em;
+  font-size: 1.5em;
+}
+
+.margin {
+  margin-top: 50px;
+}
+
+.banner_title {
+  background: linear-gradient(90deg, var(--g1) 0%, var(--g2) 100%);
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.of_table table {
+  min-width: 768px !important;
+}

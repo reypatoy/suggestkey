@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import url(cmn.scss);
+@import url(base.scss);
+
+#container_users table.t1 tbody td {
+  text-align: center;
+}
+.user_no {
+  width: 130px;
+}
+.user_auth {
+  width: 160px;
+}
+.user_edit,
+.user_delete {
+  width: 100px;
+}
+tbody .user_name {
+  text-align: left;
+}
+#container_users table.t1 tbody .user_no a {
+  display: none;
+}
+@media screen and (min-width: 787px) {
+  #container_users table.t1 tbody td {
+    display: table-cell !important;
+  }
+}
+@media screen and (max-width: 786px) {
+  #container_users table.t1,
+  #container_users table.t1 thead,
+  #container_users table.t1 tbody {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  #container_users table.t1 tr {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 8px;
+    border-bottom: 1px solid var(--secondary);
+    position: relative;
+  }
+  #container_users table.t1 tr:last-child {
+    border-bottom: none;
+  }
+  #container_users table.t1 th,
+  #container_users table.t1 td {
+    display: inline-block;
+    border: none;
+  }
+  #container_users table.t1 th:after,
+  #container_users table.t1 td:after {
+    display: none;
+  }
+  #container_users table.t1 thead .user_no,
+  #container_users table.t1 thead .user_name {
+    width: auto;
+    text-align: left;
+  }
+  #container_users table.t1 thead .user_auth,
+  #container_users table.t1 thead .user_edit,
+  #container_users table.t1 thead .user_delete {
+    display: none;
+  }
+  #container_users table.t1 tbody .user_no,
+  #container_users table.t1 tbody .user_name,
+  #container_users table.t1 tbody .user_auth,
+  #container_users table.t1 tbody .user_edit,
+  #container_users table.t1 tbody .user_delete {
+    padding-top: 0;
+    padding-bottom: 0;
+    order: 3;
+  }
+  #container_users table.t1 tbody .user_no,
+  #container_users table.t1 tbody .user_name {
+    text-align: left;
+  }
+  #container_users table.t1 tbody .user_no {
+    order: 1;
+    width: auto;
+    position: static;
+  }
+  #container_users table.t1 tbody .user_name {
+    width: 100%;
+  }
+  #container_users table.t1 tbody .user_edit,
+  #container_users table.t1 tbody .user_delete {
+    display: none;
+    padding-top: 5px;
+  }
+  #container_users table.t1 tbody tr:hover .user_edit,
+  #container_users table.t1 tbody tr:hover .user_delete {
+    opacity: 1;
+  }
+  #container_users table.t1 tbody .user_auth {
+    order: 2;
+    width: auto;
+  }
+  #container_users table.t1 tbody .user_edit,
+  #container_users table.t1 tbody .user_delete {
+    width: auto;
+    padding-right: 0;
+  }
+  #container_users table.t1 tbody .user_no a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: -3px;
+    text-align: center;
+  }
+  #container_users table.t1 tbody .user_no a:after {
+    content: "▼";
+    font-size: 8px;
+  }
+  #container_users table.t1 tbody tr.active .user_no a:after {
+    content: "▲";
+  }
+}
+
+/*---------*/
+
+h2 + .context .searchform {
+  width: 100%;
+  max-width: 300px;
+}
+h2 + .context .btn-primary {
+  margin: 0 0 0 20px;
+}
+@media screen and (max-width: 750px) {
+  h2 + .context .btn-primary {
+    position: absolute;
+    top: calc(var(--spacer) * 2.5);
+    right: calc(var(--spacer) * 2.5 + 40px);
+    margin-top: -3px;
+  }
+}

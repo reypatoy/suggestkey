@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+/*--------------cmn setting--------------*/
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+i {
+  font-style: normal;
+}
+img,
+a img {
+  border: 0;
+  vertical-align: top;
+}
+img {
+  max-width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+}
+img[height] {
+  height: auto;
+}
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+a,
+input,
+button {
+  outline: 0;
+}
+
+/*--------------user setting--------------*/
+
+iframe {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  overflow: hidden;
+  border-spacing: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.mt-1 {
+  margin-top: calc(var(--spacer) * 1);
+}
+.mt-2 {
+  margin-top: calc(var(--spacer) * 2);
+}
+.mt-3 {
+  margin-top: calc(var(--spacer) * 3);
+}
+.mt-4 {
+  margin-top: calc(var(--spacer) * 4);
+}
+.mt-5 {
+  margin-top: calc(var(--spacer) * 5);
+}
+.mb-1 {
+  margin-bottom: calc(var(--spacer) * 1);
+}
+.mb-2 {
+  margin-bottom: calc(var(--spacer) * 2);
+}
+.mb-3 {
+  margin-bottom: calc(var(--spacer) * 3);
+}
+.mb-4 {
+  margin-bottom: calc(var(--spacer) * 4);
+}
+.mb-5 {
+  margin-bottom: calc(var(--spacer) * 5);
+}
+
+/*--------------body--------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--body);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.02rem;
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-family);
+  background: #f9f9f9;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  /*html{
+		font-size: 55%;
+	}*/
+  body {
+    letter-spacing: 0;
+  }
+  :root {
+    --spacer: 1.5vw;
+  }
+}
+
+.suggests .suggest_set a.btn_link:before {
+  content: "open_in_new";
+  height: 100%;
+  width: 100%;
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 28px;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 10;
+  color: var(--primary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.suggests .suggest_set button.btn_remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+  position: relative;
+}
+.suggests .suggest_set button.btn_remove:before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  background: var(--danger);
+  color: #fff;
+  line-height: 1;
+  font-size: 28px;
+  border-radius: 100px;
+}
+.suggests .suggest_set button.btn_remove:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  right: calc(50% - 5px);
+}
+
+.suggests .suggest_set button.btn_add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+}
+
+.suggests .suggest_set button.btn_add:before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  background: var(--blue);
+  color: #fff;
+  line-height: 1;
+  font-size: 28px;
+  border-radius: 100px;
+}
+
+.suggests .suggest_set button.btn_add:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  right: calc(50% - 5px);
+}
+
+.suggests .suggest_set button.btn_add span {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: #fff;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 50%;
+}
+
+.submitbtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--spacer) * 2);
+}
+.submitbtns > div {
+  margin: 0 10px;
+}
+.submitbtns .btn-primary a,
+div.btn-primary input {
+  background: var(--primary);
+}
+#container_casedetail .h2 .btn-danger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+div[class^="btn-"] {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.custom-item {
+  padding: 10px 15px !important;
+  border-radius: 4px !important;
+  background-color: white !important;
+  cursor: pointer !important;
+  transition:
+    background-color 0.3s,
+    color 0.3s !important;
+}
+
+.custom-item:hover {
+  background-color: lightgrey !important;
+  color: #000 !important;
+}

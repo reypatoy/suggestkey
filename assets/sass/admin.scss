@@ -1,0 +1,548 @@
+@charset "UTF-8";
+@import url(cmn.css);
+@import url(base.css);
+@import url(editCase.css);
+
+#container_case table.t1 tbody td {
+  text-align: center;
+}
+.case_no,
+.case_contract,
+.case_edit {
+  width: 120px;
+}
+tbody .case_name {
+  text-align: left;
+}
+#container_case table.t1 tbody .case_no a {
+  display: none;
+}
+@media screen and (min-width: 601px) {
+  #container_case table.t1 tbody td {
+    display: table-cell !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  #container_case table.t1,
+  #container_case table.t1 thead,
+  #container_case table.t1 tbody {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  #container_case table.t1 tr {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 8px;
+    border-bottom: 1px solid var(--secondary);
+  }
+  #container_case table.t1 tr:last-child {
+    border-bottom: none;
+  }
+  #container_case table.t1 th,
+  #container_case table.t1 td {
+    display: inline-block;
+    border: none;
+  }
+  #container_case table.t1 th:after,
+  #container_case table.t1 td:after {
+    display: none;
+  }
+  #container_case table.t1 thead .case_no,
+  #container_case table.t1 thead .case_name {
+    width: auto;
+    text-align: left;
+  }
+  #container_case table.t1 thead .case_contract,
+  #container_case table.t1 thead .case_edit {
+    display: none;
+  }
+  #container_case table.t1 tbody .case_no,
+  #container_case table.t1 tbody .case_name {
+    width: 100%;
+    text-align: left;
+  }
+  #container_case table.t1 tbody .case_no,
+  #container_case table.t1 tbody .case_name,
+  #container_case table.t1 tbody .case_contract,
+  #container_case table.t1 tbody .case_edit {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #container_case table.t1 tbody .case_contract,
+  #container_case table.t1 tbody .case_edit {
+    display: none;
+    padding-top: 5px;
+  }
+  #container_case table.t1 tbody tr:hover .case_contract,
+  #container_case table.t1 tbody tr:hover .case_edit {
+    opacity: 1;
+  }
+  #container_case table.t1 tbody .case_contract {
+    width: auto;
+  }
+  #container_case table.t1 tbody .case_contract:before {
+    content: "稼働中/契約数：";
+  }
+  #container_case table.t1 tbody .case_edit {
+    width: auto;
+  }
+  #container_case table.t1 tbody .case_no {
+    position: relative;
+  }
+  #container_case table.t1 tbody .case_no a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: -3px;
+    text-align: center;
+  }
+  #container_case table.t1 tbody .case_no a:after {
+    content: "▼";
+    font-size: 8px;
+  }
+  #container_case table.t1 tbody tr.active .case_no a:after {
+    content: "▲";
+  }
+}
+
+/*---------*/
+
+h2 + .context .searchform {
+  width: 100%;
+  max-width: 300px;
+}
+h2 + .context [class*="btn-"] {
+  margin: 0 0 0 20px;
+}
+@media screen and (max-width: 750px) {
+  h2 + .context [class*="btn-"] {
+    position: absolute;
+    top: calc(var(--spacer) * 2.5);
+    right: calc(var(--spacer) * 2.5 + 40px);
+    margin-top: -3px;
+  }
+}
+
+/*-----------*/
+
+.suggests .add {
+  position: relative;
+}
+.suggests .add input {
+  padding-right: 58px;
+}
+.suggests .add a.btn_add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid var(--primary);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.suggests .suggest_set {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.suggests .suggest_set + .suggest_set {
+  margin-top: 10px;
+}
+.suggests .suggest_set > div {
+  width: calc(100% - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.suggests .suggest_set > div input {
+  width: 49%;
+}
+.suggests .suggest_set a.btn_link {
+  width: 35px;
+  height: 30px;
+  position: relative;
+  display: none;
+}
+.suggests .suggest_set a.btn_link:before {
+  content: "open_in_new";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 1;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 10;
+  color: var(--primary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.suggests .suggest_set a.btn_remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+  position: relative;
+}
+.suggests .suggest_set a.btn_remove:before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  background: var(--danger);
+  color: #fff;
+  line-height: 1;
+  font-size: 22px;
+  border-radius: 100px;
+}
+.suggests .suggest_set a.btn_remove:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  right: calc(50% - 5px);
+}
+.suggests .suggest_set:nth-of-type(1):last-child a.btn_remove {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .suggests .suggest_set {
+    display: block;
+    overflow: hidden;
+  }
+  .suggests .suggest_set a.btn_link,
+  .suggests .suggest_set a.btn_remove {
+    float: right;
+  }
+  .suggests .suggest_set > div {
+    display: block;
+    width: 100%;
+  }
+  .suggests .suggest_set > div input {
+    width: 100%;
+  }
+  .suggests .suggest_set > div input + input {
+    margin-top: 5px;
+  }
+}
+
+/*-----------*/
+
+#container_casedetail .h2 .btn-danger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#container_casedetail table.t2 th {
+  width: 150px;
+}
+#container_casedetail .form_input {
+  max-width: 800px;
+}
+#container_casedetail .suggest_set select {
+  width: 100px;
+}
+#container_casedetail .suggests .suggest_set > div input {
+  width: calc(49% - 55px);
+}
+#container_casedetail .suggests .suggest_set a.btn_link {
+  display: block;
+}
+#container_casedetail .suggests .suggest_set a.btn_remove {
+}
+
+.submitbtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--spacer) * 2);
+}
+.submitbtns > div {
+  margin: 0 10px;
+}
+.suggest_set .form_input {
+  margin-bottom: 0;
+}
+.suggest_set .form_input label {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  #container_casedetail table.t2,
+  #container_casedetail table.t2 tbody,
+  #container_casedetail table.t2 tr,
+  #container_casedetail table.t2 th,
+  #container_casedetail table.t2 td {
+    display: block;
+  }
+  table.t2 th:after,
+  table.t2 td:after {
+    display: none;
+  }
+  #container_casedetail table.t2 th {
+    width: 100%;
+    text-align: left;
+    border-bottom: none;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  #container_casedetail table.t2 td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #container_casedetail .suggests .suggest_set > div .form_input,
+  #container_casedetail .suggests .suggest_set > div > input {
+    width: 100%;
+  }
+  #container_casedetail .suggests .suggest_set > div .form_input {
+    margin-top: 5px;
+  }
+  #container_casedetail .suggests .suggest_set a.btn_link,
+  #container_casedetail .suggests .suggest_set a.btn_remove {
+    position: relative;
+    top: -34px;
+  }
+}
+
+/*---------*/
+
+#container_view {
+  background: linear-gradient(90deg, var(--g1) 0%, var(--g2) 100%);
+  text-align: center;
+  padding: 60px calc(var(--spacer) * 2);
+  position: relative;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+#container_view .name {
+  font-size: 2.2rem;
+  margin-bottom: calc(var(--spacer) * 1);
+}
+#container_view .date {
+  margin-bottom: calc(var(--spacer) * 1.5);
+}
+#container_view .form_input {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+#container_view .form_input label {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  margin-bottom: calc(var(--spacer) * 1.5);
+}
+#container_view .form_input select {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  font-size: 1.6rem;
+  width: auto;
+  min-width: 500px;
+  text-align: center;
+}
+#container_view .form_input label:has(select)::before {
+  border-color: #fff;
+}
+#container_view .form_input option {
+  color: var(--body);
+}
+#container_view .form_input label + p {
+  opacity: 0.8;
+}
+@media screen and (max-width: 600px) {
+  #container_view .form_input select {
+    min-width: 80vw;
+  }
+}
+
+/*---------*/
+
+#container_calendar .slick {
+  position: relative;
+}
+#container_calendar .slick-list {
+  overflow: hidden;
+}
+#container_calendar .slick-track {
+  display: flex;
+  align-items: flex-start;
+}
+#container_calendar .item_head {
+  text-align: center;
+}
+.item_head p {
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacer) * 2);
+}
+#container_calendar .calendar {
+  width: 100%;
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+}
+#container_calendar .calendar td {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--secondary);
+  position: relative;
+}
+#container_calendar .calendar tbody tr:last-child td {
+  border-bottom: none;
+}
+#container_calendar .calendar td {
+  border-left: 1px solid var(--secondary);
+}
+#container_calendar .calendar td:first-child {
+  border-left: none;
+}
+#container_calendar .calendar thead td {
+  font-weight: bold;
+  background: var(--secondary);
+}
+#container_calendar .calendar thead td:nth-of-type(7n) {
+  color: #62c3f2;
+}
+#container_calendar .calendar thead td:nth-of-type(7n + 1) {
+  color: #ff9898;
+}
+#container_calendar .calendar td.today {
+  font-weight: bold;
+}
+#container_calendar .calendar td span {
+  display: block;
+  border-radius: 100px;
+  line-height: 30px;
+  width: 30px;
+  border: 10px solid transparent;
+  box-sizing: content-box;
+  margin: auto;
+}
+#container_calendar .calendar td.ng span,
+#container_calendar .calendar td.ok span {
+  color: #fff;
+  cursor: pointer;
+}
+#container_calendar .calendar td.ng span {
+  background: var(--secondary);
+  color: #fff;
+}
+#container_calendar .calendar td.ok span {
+  background: var(--blue);
+}
+#container_calendar .slick-arrow {
+  border: 0;
+  background-color: var(--primary);
+  color: #fff;
+  text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  position: absolute;
+  top: 4px;
+  z-index: 3;
+  cursor: pointer;
+}
+#container_calendar .slick-arrow.slick-prev {
+  left: calc(50% - 110px);
+}
+#container_calendar .slick-arrow.slick-next {
+  right: calc(50% - 110px);
+}
+#container_calendar .slick-arrow:after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 6px);
+  transform: rotate(45deg);
+}
+#container_calendar .slick-arrow.slick-prev:after {
+  transform: rotate(-135deg);
+  left: calc(50% - 3px);
+}
+#container_calendar .slick-arrow.slick-disabled {
+  cursor: inherit;
+  background-color: var(--secondary);
+}
+.tool {
+  position: absolute;
+  z-index: 2;
+  background: #f5f5f5;
+  padding: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+.tool span {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #f5f5f5;
+  position: absolute;
+  top: -13px;
+  left: 5px;
+}
+@media screen and (max-width: 750px) {
+  #container_calendar h2 + .context [class*="btn-"] {
+    right: calc(var(--spacer) * 2.5);
+  }
+  #container_calendar .calendar td span {
+    border: 0;
+  }
+  .tool {
+    transform: translateX(-10px) translateY(-10px);
+  }
+}
+@media screen and (max-width: 350px) {
+  .item_head p {
+    font-size: 1.6rem;
+    padding-top: 5px;
+  }
+  #container_calendar .calendar td {
+    padding: 15px 0;
+  }
+  #container_calendar .calendar td span {
+    font-size: calc(var(--font-size-base) * 0.8);
+    line-height: 25px;
+    width: 25px;
+  }
+  #container_calendar .slick-arrow.slick-next {
+    right: calc(50% - 90px);
+  }
+  #container_calendar .slick-arrow.slick-prev {
+    left: calc(50% - 90px);
+  }
+  .tool {
+    transform: translateX(-12px) translateY(-15px);
+  }
+}
